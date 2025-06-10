@@ -1,4 +1,4 @@
-// import { NavLink } from "@/components/NavLink";
+import { NavLink } from "@/components/NavLink";
 import { UserButton } from "@clerk/nextjs";
 import { CalendarRange } from "lucide-react";
 import { ReactNode } from "react";
@@ -12,8 +12,8 @@ export default function PrivateLayout({ children }: { children: ReactNode }) {
             <CalendarRange className="size-6" />
             <span className="sr-only md:not-sr-only">Calendor</span>
           </div>
-          {/* <NavLink href="/events">Events</NavLink>
-          <NavLink href="/schedule">Schedule</NavLink> */}
+          <NavLink href="/events">Events</NavLink>
+          <NavLink href="/schedule">Schedule</NavLink>
           <div className="ml-auto size-10">
             <UserButton
               appearance={{ elements: { userButtonAvatarBox: "size-full" } }}
