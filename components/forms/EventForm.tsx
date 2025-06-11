@@ -140,6 +140,7 @@ export function EventForm({
               <FormDescription>
                 Inactive events will not be visible for users to book
               </FormDescription>
+              <FormMessage />
             </FormItem>
           )}
         />
