@@ -1,23 +1,23 @@
-import { Button } from "@/components/ui/button";
-import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+
+import { Calendar } from "lucide-react";
+import { LoginForm } from "@/components/forms/LoginForm";
 
 export default async function HomePage() {
   const { userId } = await auth();
   if (userId != null) redirect("/events");
 
   return (
-    <div className="text-center container my-4 mx-auto">
-      <h1 className="text-3xl mb-4">Home Page</h1>
-      <div className="flex gap-2 justify-center">
-        <Button asChild>
-          <SignInButton />
-        </Button>
-        <Button asChild>
-          <SignUpButton />
-        </Button>
-        <UserButton />
+    <div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+      <div className="flex w-full max-w-sm flex-col gap-6">
+        <a href="#" className="flex items-center gap-2 self-center font-medium">
+          <div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
+            <Calendar className="size-4" />
+          </div>
+          My Calendar.
+        </a>
+        <LoginForm />
       </div>
     </div>
   );

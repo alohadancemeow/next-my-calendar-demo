@@ -52,7 +52,7 @@ export default async function SuccessPage({
       </CardContent>
       <CardFooter>
         <Button asChild>
-          <Link href="/">Back to Home</Link>
+          <Link href="/events">Back to Home</Link>
         </Button>
       </CardFooter>
     </Card>

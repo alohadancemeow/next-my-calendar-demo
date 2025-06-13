@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
+// import { dark } from "@clerk/themes";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const roboto = Roboto({
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +26,7 @@ export default function RootLayout({
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
-            inter.variable
+            roboto.className
           )}
           suppressHydrationWarning
         >

@@ -5,7 +5,7 @@ import { auth } from "@clerk/nextjs/server";
 
 export const revalidate = 0;
 
-export default async function SchedulePage() {
+export default async function AvailabilityPage() {
   const { userId, redirectToSignIn } = await auth();
   if (userId == null) return redirectToSignIn();
 
@@ -17,7 +17,7 @@ export default async function SchedulePage() {
   return (
     <Card className="max-w-md mx-auto">
       <CardHeader>
-        <CardTitle>Schedule</CardTitle>
+        <CardTitle>Availability settings</CardTitle>
       </CardHeader>
       <CardContent>
         <ScheduleForm schedule={schedule} />
