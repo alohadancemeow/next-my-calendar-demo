@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { db } from "@/drizzle/db";
 import { formatEventDescription } from "@/lib/formatters";
-import { clerkClient } from "@clerk/nextjs/server";
+// import { clerkClient } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -28,17 +28,17 @@ export default async function BookingPage({ params }: { params: Params }) {
 
   if (events.length === 0) return notFound();
 
-  const { fullName } = await (await clerkClient()).users.getUser(clerkUserId);
+  // const { fullName } = await (await clerkClient()).users.getUser(clerkUserId);
 
   return (
     <div className="max-w-5xl mx-auto">
-      <div className="text-4xl md:text-5xl font-semibold mb-4 text-center">
+      {/* <div className="text-4xl md:text-5xl font-semibold mb-4 text-center">
         {fullName}
-      </div>
-      <div className="text-muted-foreground mb-6 max-w-sm mx-auto text-center">
+      </div> */}
+      {/* <div className="text-muted-foreground mb-6 max-w-sm mx-auto text-center">
         Welcome to my scheduling page. Please follow the instructions to add an
         event to my calendar.
-      </div>
+      </div> */}
       <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
         {events.map((event) => (
           <EventCard key={event.id} {...event} />
